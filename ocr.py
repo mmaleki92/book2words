@@ -14,7 +14,6 @@ def words_list(page_image):
     blob = TextBlob(page)
 
     word_list = blob.words.lemmatize()
-
     # blob.noun_phrases 
     return word_list
 
