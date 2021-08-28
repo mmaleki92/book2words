@@ -42,15 +42,18 @@ def load_image(image_file):
 
 
 def main():
+
 	st.title("File Upload Tutorial")
 
 	menu = ["Home","Dataset","DocumentFiles","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Home":
+
 		st.subheader("Home")
 		image_file = st.file_uploader("Upload Image",type=['png','jpeg','jpg'])
 		if image_file is not None:
+
 		
 			# To See Details
 			# st.write(type(image_file))
@@ -61,8 +64,8 @@ def main():
 			img = load_image(image_file)
 			# st.image(img,width=250,height=250)
 			st.image(img)
-
         return img
+
 
 	# elif choice == "Dataset":
 	# 	st.subheader("Dataset")
