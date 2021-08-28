@@ -17,21 +17,28 @@ def words_list(page_image):
     # blob.noun_phrases 
     return word_list
 
-def ocr():
+def ocr(img):
     directory  = 'output_article'
     # directory = 'output/'
-
     pages = 5
-    set_words = set()
-    all_files = os.listdir(directory)
-    for filename in all_files[:pages]:
-            if filename.endswith(".jpg"):
-                print(filename)
-                image = cv2.imread('output_article/' +filename)
 
-                new_words = words_list(image)
-                set_words = set_words.union(set(new_words))
-                # print(new_words)
-            # break
-            # print(set_words)
-            print(len(set_words))
+    set_words = set()
+
+    if (img == None):
+        all_files = os.listdir(directory)
+        for filename in all_files[:pages]:
+                if filename.endswith(".jpg"):
+                    print(filename)
+                    image = cv2.imread('output_article/' +filename)
+
+                    new_words = words_list(image)
+                    set_words = set_words.union(set(new_words))
+                    # print(new_words)
+                # break
+                # print(set_words)
+                print(len(set_words))
+    else:
+        image = img # cv2.imread(img)
+        new_words = words_list(image)
+        set_words = set_words.union(set(new_words))
+    return set_words

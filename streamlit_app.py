@@ -6,14 +6,14 @@ import streamlit as st
 import multiprocessing
 import os
 from read_file import main
-
+from ocr import ocr
 """
 
 # book2words 
 convert your book/article to a bunch of words to learn the meaning of each word and read your material faster!
 
 """
-main()
+img = main()
 
 def file_selector(folder_path='.'):
     filenames = os.listdir(folder_path)
@@ -22,7 +22,7 @@ def file_selector(folder_path='.'):
 
 filename = file_selector()
 st.write('You selected `%s`' % filename)
-
+ocr(img)
 # st.write(f"Number of cores : {multiprocessing.cpu_count()}")
 
 #so how to do it?
