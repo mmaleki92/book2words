@@ -1,0 +1,5 @@
+matplotlib
+pdf2image
+pandas
+streamlit
+pytesseract
