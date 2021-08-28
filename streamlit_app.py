@@ -5,9 +5,11 @@ import pandas as pd
 import streamlit as st
 import multiprocessing
 
-"""# convert your book/article to  bunch of words 
+"""
 
-to learn the meaning of each word and read your material faster!
+# book2words 
+convert your book/article to a bunch of words to learn the meaning of each word and read your material faster!
+
 """
 st.write(f"Number of cores : {multiprocessing.cpu_count()}")
 
