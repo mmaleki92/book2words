@@ -3,3 +3,6 @@ pdf2image
 pandas
 streamlit
 pytesseract
+pdfplumber
+docx2txt
+PyPDF2
