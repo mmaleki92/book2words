@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 import multiprocessing
 import os
-
+from read_file import main
 """
 
 # book2words 
