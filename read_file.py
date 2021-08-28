@@ -61,8 +61,7 @@ def main():
 			img = load_image(image_file)
 			# st.image(img,width=250,height=250)
 			st.image(img)
-
-
+            
 	elif choice == "Dataset":
 		st.subheader("Dataset")
 		data_file = st.file_uploader("Upload CSV",type=['csv'])

@@ -7,9 +7,6 @@ import multiprocessing
 import os
 from read_file import main
 
-
-
-
 """
 
 # book2words 
@@ -18,13 +15,13 @@ convert your book/article to a bunch of words to learn the meaning of each word 
 """
 main()
 
-# def file_selector(folder_path='.'):
-#     filenames = os.listdir(folder_path)
-#     selected_filename = st.selectbox('Select a file', filenames)
-#     return os.path.join(folder_path, selected_filename)
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
 
-# filename = file_selector()
-# st.write('You selected `%s`' % filename)
+filename = file_selector()
+st.write('You selected `%s`' % filename)
 
 # st.write(f"Number of cores : {multiprocessing.cpu_count()}")
 
