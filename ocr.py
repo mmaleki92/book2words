@@ -17,7 +17,7 @@ def words_list(page_image):
     # blob.noun_phrases 
     return word_list
 
-if __name__ == '__main__':
+def ocr():
     directory  = 'output_article'
     # directory = 'output/'
 
