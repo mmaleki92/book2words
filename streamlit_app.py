@@ -4,6 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import multiprocessing
+import os
 
 """
 
@@ -11,6 +12,16 @@ import multiprocessing
 convert your book/article to a bunch of words to learn the meaning of each word and read your material faster!
 
 """
+
+
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
+
+filename = file_selector()
+st.write('You selected `%s`' % filename)
+
 st.write(f"Number of cores : {multiprocessing.cpu_count()}")
 
 #so how to do it?
