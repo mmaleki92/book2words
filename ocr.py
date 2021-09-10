@@ -4,16 +4,19 @@ from textblob import TextBlob
 import matplotlib.pyplot as plt
 import pytesseract
 import cv2
-
+import enchant
+# d = enchant.Dict("en_US")
 
 def words_list(page_image):
 
     custom_config = r'--oem 3 --psm 6'
-    page = pytesseract.image_to_string(page_image, config=custom_config)
+    # page = pytesseract.image_to_string(page_image, config=custom_config)
 
+    page = pytesseract.image_to_string(page_image)
+    page = page if page else pytesseract.image_to_string(page_image, config='--psm 10')
+    print(page)
     blob = TextBlob(page)
-
-    word_list = blob.words.lemmatize()
+    word_list = blob.words.lemmatize().lower() 
     # blob.noun_phrases 
     return word_list
 
@@ -24,7 +27,7 @@ def ocr(img):
 
     set_words = set()
 
-    if (img == None):
+    if (False):
         all_files = os.listdir(directory)
         for filename in all_files[:pages]:
                 if filename.endswith(".jpg"):
@@ -38,7 +41,8 @@ def ocr(img):
                 # print(set_words)
                 print(len(set_words))
     else:
-        image = img # cv2.imread(img)
-        new_words = words_list(image)
+        # image = cv2.imread(img)
+        new_words = words_list(img)
         set_words = set_words.union(set(new_words))
+
     return set_words

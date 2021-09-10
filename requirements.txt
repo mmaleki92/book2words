@@ -6,3 +6,4 @@ pytesseract
 pdfplumber
 docx2txt
 PyPDF2
+pyenchant
