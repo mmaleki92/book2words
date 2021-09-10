@@ -7,3 +7,5 @@ pdfplumber
 docx2txt
 PyPDF2
 pyenchant
+googletrans
+opencv-python
