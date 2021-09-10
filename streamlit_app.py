@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 import multiprocessing
 import os
-from file_reader import read_files
+# from file_reader import read_files
 # from ocr import ocr
 import re
 from googletrans import Translator
