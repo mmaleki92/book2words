@@ -8,6 +8,7 @@ import os
 from file_reader import read_files
 from ocr import ocr
 import re
+from googletrans import Translator
 
 """
 
@@ -46,7 +47,10 @@ class main_app:
             else:
                 st.write("Please choose an appropriate format!")
 
-
 if __name__ == '__main__':
-    main_app().run()
+    # main_app().run()
+    translator = Translator()
+    result = translator.translate('Mitä sinä teet')
+    print(result.text)
+
     
