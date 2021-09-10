@@ -1,6 +1,6 @@
-/genanki
-/outopt
-/__pycache__
+genanki/
+outopt/
+__pycache__/
 bader.pdf
 Bread and Wine.pdf
 output_article
